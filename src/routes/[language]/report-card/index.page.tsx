@@ -6,6 +6,7 @@ import { useApi } from '../../../tools/useApiCall'
 import { ReportCardBill, ReportCardMember, ReportCardResponse } from '../../../api/api-models'
 import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
+import { JSXElementConstructor } from 'react'
 
 type MemberBillVotePosition = 'yes' | 'no' | 'nio' | 'na';
 type MemberBillVoteFavor = 'yes' | 'no' | 'neutral';
@@ -50,6 +51,59 @@ function buildMemberBillVote(bill: ReportCardBill, member: ReportCardMember): Me
 	};
 }
 
+type TableDataColumn = {
+	id: string;
+	title: string;
+}
+type TableDataCell = {
+	element: JSX.Element;
+}
+type TableDataRow = {
+	id: string;
+	cells: TableDataCell[]
+};
+type TableData = {
+	columns: TableDataColumn[],
+	rows: TableDataRow[]
+};
+
+function buildTableData(apiResponse: ReportCardResponse): TableData {
+	return {
+		columns: [
+			{ id: 'name', title: 'Name' },
+			{ id: 'location', title: 'State/District' },
+			...apiResponse.bills.map<TableDataColumn>(bill => ({
+				id: bill.bill_number,
+				title: bill.title
+			}))
+		],
+		rows: apiResponse.members.map<TableDataRow>(member => ({
+			id: member.member_id,
+			cells: [
+				{
+					element: <span>{member.member_short_title} {member.member_name}</span>
+				},
+				{
+					element: <>
+						<span>{member.state}</span>
+						{member.district && <span>/{member.district}</span>}
+					</>
+				},
+				...apiResponse.bills.map<TableDataCell>(bill => {
+					const uid = `${member.member_id}${bill.bill_number}`;
+					const vote = member.bills.find(b => b.bill_number == bill.bill_number);
+
+					let element: JSX.Element = <span>N/A</span>;
+
+					return {
+						element: element
+					};
+				})
+			]
+		}))
+	};
+}
+
 export default function ReportCard() {
 	const language = useLanguage()
 	const text = useText()
@@ -57,28 +111,23 @@ export default function ReportCard() {
 	const app = useApp()
 	const apiCall = useApi<ReportCardResponse>('/congress/ua_report_card');
 
+	const tableData = apiCall.data ? buildTableData(apiCall.data) : null;
+
 	return (<Container className={style.container}>
 		<DataLoader isLoading={apiCall.isLoading}>
-			{apiCall.data && <table>
+			{tableData && <table>
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>State/District</th>
-						{apiCall.data.bills.map(bill => <th key={bill.id}>
-							{bill.title}
+						{tableData.columns.map(column => <th key={column.title}>
+							{column.title}
 						</th>)}
 					</tr>
 				</thead>
 				<tbody>
-					{apiCall.data.members.map(member => <tr key={member.member_id}>
-						<td>{member.member_short_title} {member.member_name}</td>
-						<td>{member.state}{member.district && <span>/{member.district}</span>}</td>
-						{apiCall.data!.bills.map(bill => buildMemberBillVote(bill, member))
-							.map(vote => <th key={vote.id}>
-								<span>
-									{vote.position}
-								</span>
-							</th>)}
+					{tableData.rows.map(row => <tr key={row.id}>
+						{row.cells.map((cell, index) => <td key={index}>
+							{cell.element}
+						</td>)}
 					</tr>)}
 				</tbody>
 			</table>}
