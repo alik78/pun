@@ -13,4 +13,40 @@
 		padding-right: 10px;
 		max-width: 100%;
 	}
+
+	.ua-report-card-table {
+		width: 100%;
+		text-align: left;
+		border-collapse: collapse;
+
+		td, th {
+			border: 1px solid #E5E5E5;
+			//padding: 3px 2px;
+			padding: 0.5em;
+		}
+
+		tr:nth-child(even) {
+			background: #E5E5E5;
+		}
+
+		thead {
+			background: #5E9AED;
+		}
+
+		thead th {
+			font-size: 15px;
+			font-weight: bold;
+			color: #FFFFFF;
+			text-align: center;
+			vertical-align: middle;
+
+			&.header-name {
+				width: 300px;
+			}
+
+			&.header-location {
+				width: 150px;
+			}
+		}
+	}
 }

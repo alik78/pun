@@ -54,8 +54,10 @@ function buildMemberBillVote(bill: ReportCardBill, member: ReportCardMember): Me
 type TableDataColumn = {
 	id: string;
 	title: string;
+	className?: string;
 }
 type TableDataCell = {
+	className?: string;
 	element: JSX.Element;
 }
 type TableDataRow = {
@@ -67,21 +69,24 @@ type TableData = {
 	rows: TableDataRow[]
 };
 
-function buildTableData(apiResponse: ReportCardResponse): TableData {
+function buildTableData(apiResponse: ReportCardResponse, text: (id: string) => string): TableData {
 	return {
 		columns: [
-			{ id: 'name', title: 'Name' },
-			{ id: 'location', title: 'State/District' },
-			...apiResponse.bills.map<TableDataColumn>(bill => ({
+			{ id: 'name', title: 'Name', className: 'header-name' },
+			{ id: 'location', title: 'State/District', className: 'header-location' },
+			...apiResponse.bills.map<TableDataColumn>(bill => ({				
 				id: bill.bill_number,
-				title: bill.title
+				title: bill.title,
+				className: 'header-bill'
 			}))
 		],
 		rows: apiResponse.members.map<TableDataRow>(member => ({
 			id: member.member_id,
 			cells: [
 				{
-					element: <span>{member.member_short_title} {member.member_name}</span>
+					element: <>
+						<span>{member.member_short_title} {member.member_name}</span>
+					</>
 				},
 				{
 					element: <>
@@ -90,13 +95,29 @@ function buildTableData(apiResponse: ReportCardResponse): TableData {
 					</>
 				},
 				...apiResponse.bills.map<TableDataCell>(bill => {
-					const uid = `${member.member_id}${bill.bill_number}`;
+					//const uid = `${member.member_id}${bill.bill_number}`;
 					const vote = member.bills.find(b => b.bill_number == bill.bill_number);
 
-					let element: JSX.Element = <span>N/A</span>;
+					if (!vote) {
+						return { element: <span>N/A</span> };
+					}
+
+					let cellClass: string = 'vote-favor-neutral';
+					let cellText: string = 'Not In Office';
+
+					if (vote.vote_position == "Yes") {
+						cellText = 'Aye';
+						cellClass = bill.in_favor == true ? 'vote-favor-positive' : 'vote-favor-negative';
+					} else if (vote.vote_position == "No") {
+						cellText = 'No';
+						cellClass = bill.in_favor == false ? 'vote-favor-positive' : 'vote-favor-negative';
+					}
 
 					return {
-						element: element
+						className: cellClass,
+						element: <>
+							<span>{cellText}</span>
+						</>
 					};
 				})
 			]
@@ -111,21 +132,21 @@ export default function ReportCard() {
 	const app = useApp()
 	const apiCall = useApi<ReportCardResponse>('/congress/ua_report_card');
 
-	const tableData = apiCall.data ? buildTableData(apiCall.data) : null;
+	const tableData = apiCall.data ? buildTableData(apiCall.data, text) : null;
 
 	return (<Container className={style.container}>
 		<DataLoader isLoading={apiCall.isLoading}>
-			{tableData && <table>
+			{tableData && <table className={style['ua-report-card-table']}>
 				<thead>
 					<tr>
-						{tableData.columns.map(column => <th key={column.title}>
+						{tableData.columns.map(column => <th key={column.title} className={style[column.className || '']}>
 							{column.title}
 						</th>)}
 					</tr>
 				</thead>
 				<tbody>
 					{tableData.rows.map(row => <tr key={row.id}>
-						{row.cells.map((cell, index) => <td key={index}>
+						{row.cells.map((cell, index) => <td key={index} className={cell.className} >
 							{cell.element}
 						</td>)}
 					</tr>)}
