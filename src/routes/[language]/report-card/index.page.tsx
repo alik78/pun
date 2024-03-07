@@ -73,8 +73,16 @@ type TableData = {
 function buildTableData(apiResponse: ReportCardResponse, text: (id: string) => string): TableData {
 	return {
 		columns: [
-			{ id: 'name', title: 'Name', className: 'header-name' },
-			{ id: 'location', title: 'State/District', className: 'header-location' },
+			{
+				id: 'name',
+				title: text('report_card.header_name'),
+				className: 'header-name'
+			},
+			{
+				id: 'location',
+				title: text('report_card.header_location'),
+				className: 'header-location'
+			},
 			...apiResponse.bills.map<TableDataColumn>(bill => ({				
 				id: bill.bill_number,
 				title: bill.title,
@@ -104,20 +112,20 @@ function buildTableData(apiResponse: ReportCardResponse, text: (id: string) => s
 					if (!vote) {
 						return {
 							className: ['vote-cell'],
-							element: <span>N/A</span>
+							element: <span>-</span>
 						};
 					}
 
 					let cellClass: string = 'vote-favor-neutral';
-					let cellText: string = 'Not In Office';
+					let cellText: string = text('report_card.vote_not_in_office');;
 					let cellIconCharCode: number = 9744;
 
 					if (vote.vote_position == "Yes") {
-						cellText = 'Aye';
+						cellText = text('report_card.vote_yes');
 						cellClass = bill.in_favor == true ? 'vote-favor-positive' : 'vote-favor-negative';
 						cellIconCharCode = 9745;
 					} else if (vote.vote_position == "No") {
-						cellText = 'No';
+						cellText = text('report_card.vote_no');
 						cellClass = bill.in_favor == false ? 'vote-favor-positive' : 'vote-favor-negative';
 						cellIconCharCode = 9746;
 					}
