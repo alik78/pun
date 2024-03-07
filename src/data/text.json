@@ -22,7 +22,7 @@
 			"call": "Call to Congress",
 			"about": "About Us",
 			"methodology": "Methodology",
-			"report-card": "Congress Report Card"
+			"congress-report-card": "Congress Report Card"
 		},
 		"summary": {
 			"title": "US Military Aid to Ukraine",
@@ -154,7 +154,7 @@
 			"letter": "Лист до Конгресу",
 			"call": "Дзвінок до Конгресу",
 			"about": "Про нас",
-			"report-card": "Звітна картка Конгресу"
+			"congress-report-card": "Звітна картка Конгресу"
 		},
 		"summary": {
 			"title": "Військова допомога США Україні",
