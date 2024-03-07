@@ -32,7 +32,7 @@
 	&.active {
 		cursor: default;
 
-		background: rgba($color-accent-secondary, 0.1);
+		background: rgba($color-accent-secondary, 0.2);
 		// after is set in the mixin `url-hover`
 		&:after {
 			transform: scaleX(1);

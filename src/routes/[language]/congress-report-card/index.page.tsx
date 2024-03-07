@@ -6,7 +6,6 @@ import { useApi } from '../../../tools/useApiCall'
 import { ReportCardBill, ReportCardMember, ReportCardResponse } from '../../../api/api-models'
 import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
-import { JSXElementConstructor } from 'react'
 import cn from 'clsx'
 
 type MemberBillVotePosition = 'yes' | 'no' | 'nio' | 'na';
@@ -142,7 +141,7 @@ function buildTableData(apiResponse: ReportCardResponse, text: (id: string) => s
 	};
 }
 
-export default function ReportCard() {
+export default function CongressReportCard() {
 	const language = useLanguage()
 	const text = useText()
 	const country = useCountry()
