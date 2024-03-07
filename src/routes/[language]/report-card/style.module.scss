@@ -31,6 +31,8 @@
 
 		thead {
 			background: #5E9AED;
+			position: sticky;
+			top: calc(var(--header-height) - 1px);
 		}
 
 		thead th {
@@ -41,11 +43,11 @@
 			vertical-align: middle;
 
 			&.header-name {
-				width: 300px;
+				width: 280px;
 			}
 
 			&.header-location {
-				width: 150px;
+				width: 130px;
 			}
 		}
 	}
