@@ -7,6 +7,7 @@ import { ReportCardBill, ReportCardMember, ReportCardResponse } from '../../../a
 import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
 import { JSXElementConstructor } from 'react'
+import cn from 'clsx'
 
 type MemberBillVotePosition = 'yes' | 'no' | 'nio' | 'na';
 type MemberBillVoteFavor = 'yes' | 'no' | 'neutral';
@@ -57,7 +58,7 @@ type TableDataColumn = {
 	className?: string;
 }
 type TableDataCell = {
-	className?: string;
+	className: string[];
 	element: JSX.Element;
 }
 type TableDataRow = {
@@ -84,11 +85,13 @@ function buildTableData(apiResponse: ReportCardResponse, text: (id: string) => s
 			id: member.member_id,
 			cells: [
 				{
+					className:[],
 					element: <>
 						<span>{member.member_short_title} {member.member_name}</span>
 					</>
 				},
 				{
+					className: [],
 					element: <>
 						<span>{member.state}</span>
 						{member.district && <span>/{member.district}</span>}
@@ -99,24 +102,30 @@ function buildTableData(apiResponse: ReportCardResponse, text: (id: string) => s
 					const vote = member.bills.find(b => b.bill_number == bill.bill_number);
 
 					if (!vote) {
-						return { element: <span>N/A</span> };
+						return {
+							className: ['vote-cell'],
+							element: <span>N/A</span>
+						};
 					}
 
 					let cellClass: string = 'vote-favor-neutral';
 					let cellText: string = 'Not In Office';
+					let cellIconCharCode: number = 9744;
 
 					if (vote.vote_position == "Yes") {
 						cellText = 'Aye';
 						cellClass = bill.in_favor == true ? 'vote-favor-positive' : 'vote-favor-negative';
+						cellIconCharCode = 9745;
 					} else if (vote.vote_position == "No") {
 						cellText = 'No';
 						cellClass = bill.in_favor == false ? 'vote-favor-positive' : 'vote-favor-negative';
+						cellIconCharCode = 9746;
 					}
 
 					return {
-						className: cellClass,
+						className: ['vote-cell', cellClass],
 						element: <>
-							<span>{cellText}</span>
+							<span className={style['vote-cell-icon']} >{String.fromCharCode(cellIconCharCode)}</span>&nbsp;<span>{cellText}</span>
 						</>
 					};
 				})
@@ -146,7 +155,7 @@ export default function ReportCard() {
 				</thead>
 				<tbody>
 					{tableData.rows.map(row => <tr key={row.id}>
-						{row.cells.map((cell, index) => <td key={index} className={cell.className} >
+						{row.cells.map((cell, index) => <td key={index} className={cn(cell.className.map(x => style[x]))} >
 							{cell.element}
 						</td>)}
 					</tr>)}
