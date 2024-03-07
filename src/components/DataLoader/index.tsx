@@ -1,8 +1,9 @@
-import Container from "../Container";
-import styles from './styles.module.scss';
+import styles from './style.module.scss';
 
 export default function DataLoader({ isLoading, children, className = undefined }) {
-	return <div className='data-loader-container'>
-		{children}
-	</div>;
+	return !!isLoading
+		? <div className={styles['loader-container']}>
+			<div className={styles['loader']}></div>
+		</div>
+		: <>{children}</>;
 }
