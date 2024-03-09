@@ -16,10 +16,10 @@
 
   @include make-responsive('--header-height', (
           mobile: 60px,
-          desktop-min: 75px,
-          desktop: 80px
+          desktop-min: 85px,
+          desktop: 90px
   ),
-          80px
+          90px
   );
 
   // breakpoints
