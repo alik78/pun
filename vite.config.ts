@@ -46,13 +46,13 @@ export default defineConfig({
 			src: '/src',
 		},
 	},
-	server: {
-		proxy: {
-			'/api': {
-				target: 'http://staging-api.protectukrainenow.org/v1', 
-				changeOrigin: true,
-				rewrite: (path) => path.replace(/^\/api/, '')
-			},
-		},
-	},
+	//server: {
+	//	proxy: {
+	//		'/api': {
+	//			target: 'http://staging-api.protectukrainenow.org/v1', 
+	//			changeOrigin: true,
+	//			rewrite: (path) => path.replace(/^\/api/, '')
+	//		},
+	//	},
+	//},
 })

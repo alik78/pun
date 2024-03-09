@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { getFromCache, setCache } from './localCache';
 
 function getApiBaseUrl() {
+	return "http://staging-api.protectukrainenow.org/v1";
 	console.warn(JSON.stringify(import.meta.env, null, 2));
 	return '/api';
 }
