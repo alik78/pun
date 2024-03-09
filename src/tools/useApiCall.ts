@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { getFromCache, setCache } from './localCache';
-import { getApiBaseUrl } from '../api/api-endpoint';
+
+function getApiBaseUrl() {
+	console.warn(JSON.stringify(import.meta.env, null, 2));
+	return '/api';
+}
+
 
 export const useApi = <T>(url: string, options?: RequestInit) => {
 	return useApiInternal<T>(url, options, undefined);
