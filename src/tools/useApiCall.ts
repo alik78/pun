@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getFromCache, setCache } from './localCache';
+import { getApiBaseUrl } from '../api/api-endpoint';
 
 export const useApi = <T>(url: string, options?: RequestInit) => {
 	return useApiInternal<T>(url, options, undefined);
@@ -28,7 +29,8 @@ const useApiInternal = <T>(url: string, options?: RequestInit, cacheOptions?: { 
 		}
 
 		setIsLoading(true);
-		const requestUrl = `/api${url}`;
+		const baseUrl = getApiBaseUrl();
+		const requestUrl = baseUrl + url;
 		fetch(requestUrl, options)
 			.then(response => {
 				response.json().then(data => {
