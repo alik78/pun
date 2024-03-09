@@ -2,7 +2,7 @@ import style from './style.module.scss'
 import { useApp } from 'src/tools/app'
 import { useLanguage, useText } from 'src/tools/language'
 import { useCountry } from 'src/tools/country'
-import { useApi } from '../../../tools/useApiCall'
+import { useApi, useApiCached } from '../../../tools/useApiCall'
 import { ReportCardBill, ReportCardMember, ReportCardResponse } from '../../../api/api-models'
 import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
@@ -146,7 +146,7 @@ export default function CongressReportCard() {
 	const text = useText()
 	const country = useCountry()
 	const app = useApp()
-	const apiCall = useApi<ReportCardResponse>('/congress/ua_report_card');
+	const apiCall = useApiCached<ReportCardResponse>('/congress/ua_report_card', 1);
 
 	const tableData = apiCall.data ? buildTableData(apiCall.data, text) : null;
 
