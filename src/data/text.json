@@ -21,7 +21,8 @@
 			"letter": "Letter to Congress",
 			"call": "Call to Congress",
 			"about": "About Us",
-			"methodology": "Methodology"
+			"methodology": "Methodology",
+			"congress-report-card": "Congress Report Card"
 		},
 		"summary": {
 			"title": "US Military Aid to Ukraine",
@@ -128,6 +129,13 @@
 			"title": "US Instant Military Aid (PDA) distribution over time",
 			"subtitle": "From {{from}} to {{till}}",
 			"description": "- Adjusted for accounting errors for $6.2B"
+		},
+		"report_card": {
+			"vote_yes": "Aye",
+			"vote_no": "No",
+			"vote_not_in_office": "Not In Office",
+			"header_name": "Name",
+			"header_location": "State / District"
 		}
 	},
 	"uk": {
@@ -147,7 +155,8 @@
 			"report": "Військова допомога",
 			"letter": "Лист до Конгресу",
 			"call": "Дзвінок до Конгресу",
-			"about": "Про нас"
+			"about": "Про нас",
+			"congress-report-card": "Звітна картка Конгресу"
 		},
 		"summary": {
 			"title": "Військова допомога США Україні",
@@ -250,6 +259,13 @@
 			"title": "Розподіл миттєвої військової допомоги США (PDA) у часі",
 			"subtitle": "З {{from}} по {{till}}",
 			"description": "- З поправками на бухгалтерські помилки на суму 6,2 мільярда доларів США"
+		},
+		"report_card": {
+			"vote_yes": "За",
+			"vote_no": "Проти",
+			"vote_not_in_office": "Не голосував",
+			"header_name": "Ім'я",
+			"header_location": "Штат / Округ"
 		}
 	}
 }

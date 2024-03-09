@@ -18,25 +18,25 @@
 }
 
 .link {
-  @include url-hover($color-accent-secondary, 4px);
+	@include url-hover($color-accent-secondary, 4px);
+	text-transform: uppercase;
+	position: relative;
+	display: flex;
+	font-size: 15px;
+	font-weight: 700;
+	padding: 5px 15px;
+	color: $dark-text;
+	text-decoration: none;
+	align-items: center;
 
-  text-transform: uppercase;
-  position: relative;
-  display: flex;
-  font-size: 15px;
-  font-weight: 700;
-  padding: 5px 15px;
-  color: $dark-text;
-  text-decoration: none;
-  align-items: center;
+	&.active {
+		cursor: default;
 
-  &.active {
-    cursor: default;
-
-    // after is set in the mixin `url-hover`
-    &:after {
-      transform: scaleX(1);
-      background: $color-accent-secondary;
-    }
-  }
+		background: rgba($color-accent-secondary, 0.2);
+		// after is set in the mixin `url-hover`
+		&:after {
+			transform: scaleX(1);
+			background: $color-accent-secondary;
+		}
+	}
 }
