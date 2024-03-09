@@ -1,46 +1,55 @@
 @import './src/style/mixins';
 
 .header {
-  position: sticky;
-  top: 0;
-  min-height: var(--header-height);
-  background: url("../../assets/header-bg.webp") center / cover no-repeat;
-  width: 100%;
-  display: flex;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
-  z-index: 100;
+	position: sticky;
+	top: 0;
+	//min-height: var(--header-height);
+	height: var(--header-height);
+	background: url("../../assets/header-bg.webp") center / cover no-repeat;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
+	z-index: 100;
+}
+
+.containerWrapperMenu,
+.containerWrapperLogo {
+	display: block;
+}
+
+.containerWrapperLogo {
+	flex-grow: 1;
+}
+
+.containerWrapperMenu{
+	line-height: 2em;
 }
 
 .container {
-  @include container;
-
-  display: flex;
-  justify-content: space-between;
+	@include container;
+	display: flex;
+	justify-content: space-between;
 }
 
 .logo {
-  @include make-responsive('max-width', (
-          tablet-min: 190px,
-          desktop: 231px
-  ),
-          231px
-  );
-
-  margin-left: 10px;
-  align-self: center;
-  height: 44px;
+	@include make-responsive('max-width', ( tablet-min: 190px, desktop: 231px ), 231px );
+	margin-left: 10px;
+	align-self: center;
+	height: 44px;
 }
 
 .menu {
-  @include max-w(desktop-min) {
-    display: none !important;
-  }
+	@include max-w(desktop-min) {
+		display: none !important;
+	}
 }
 
 .hamburger {
-  @include min-w(desktop-min) {
-    display: none !important;
-  }
-  align-self: center;
-  margin-right: 6px;
+	@include min-w(desktop-min) {
+		display: none !important;
+	}
+
+	align-self: center;
+	margin-right: 6px;
 }

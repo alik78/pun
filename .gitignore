@@ -14,3 +14,8 @@ dist
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+.vs/
+[Bb]in/
+[Oo]bj/
+package-lock.json

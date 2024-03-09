@@ -11,26 +11,32 @@ const Header = ({ logo, menu, languages }) => {
 	menu = menu.map(page => [text(`menu.${page}`), `/${language}/${page}`])
 	return (
 		<header className={style.header}>
-			<Container className={style.container}>
-				<div className={style.logo}>
-					{logo}
-				</div>
-				<Menu
-					className={style.menu}
-					theme="light"
-					items={menu}
-				/>
-				<LanguageSelector
-					className={style.menu}
-					theme="light"
-					items={languages}
-				/>
-				<Hamburger
-					className={style.hamburger}
-					menu={menu}
-					languages={languages}
-			/>
-			</Container>
+			<div className={style.containerWrapperLogo} >
+				<Container className={style.container}>
+					<div className={style.logo}>
+						{logo}
+					</div>
+					<LanguageSelector
+						className={style.menu}
+						theme="light"
+						items={languages}
+					/>
+					<Hamburger
+						className={style.hamburger}
+						menu={menu}
+						languages={languages}
+					/>
+				</Container>
+			</div>
+			<div className={style.containerWrapperMenu}>
+				<Container className={style.container}>
+					<Menu
+						className={style.menu}
+						theme="light"
+						items={menu}
+					/>
+				</Container>
+			</div>
 		</header>
 	)
 }
