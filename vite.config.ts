@@ -49,7 +49,7 @@ export default defineConfig({
 	//server: {
 	//	proxy: {
 	//		'/api': {
-	//			target: 'http://staging-api.protectukrainenow.org/v1', 
+	//			target: 'http://api.staging.protectukrainenow.org/v1', 
 	//			changeOrigin: true,
 	//			rewrite: (path) => path.replace(/^\/api/, '')
 	//		},
