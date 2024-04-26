@@ -7,6 +7,7 @@ import { ReportCardBill, ReportCardMember, ReportCardResponse } from '../../../a
 import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
 import cn from 'clsx'
+import { congressMemberDetailsUrl } from '../congress-member/[id].page'
 
 type MemberBillVotePosition = 'yes' | 'no' | 'nio' | 'na';
 type MemberBillVoteFavor = 'yes' | 'no' | 'neutral';
@@ -69,7 +70,7 @@ type TableData = {
 	rows: TableDataRow[]
 };
 
-function buildTableData(apiResponse: ReportCardResponse, text: (id: string) => string): TableData {
+function buildTableData(language: string, apiResponse: ReportCardResponse, text: (id: string) => string): TableData {
 	return {
 		columns: [
 			{
@@ -94,7 +95,7 @@ function buildTableData(apiResponse: ReportCardResponse, text: (id: string) => s
 				{
 					className:[],
 					element: <>
-						<span>{member.member_short_title} {member.member_name}</span>
+						<a href={congressMemberDetailsUrl(member.member_id, language)}>{member.member_short_title} {member.member_name}</a>
 					</>
 				},
 				{
@@ -148,7 +149,7 @@ export default function CongressReportCard() {
 	const app = useApp()
 	const apiCall = useApiCached<ReportCardResponse>('/congress/ua_report_card', 1);
 
-	const tableData = apiCall.data ? buildTableData(apiCall.data, text) : null;
+	const tableData = apiCall.data ? buildTableData(language, apiCall.data, text) : null;
 
 	return (<Container className={style.container}>
 		<DataLoader isLoading={apiCall.isLoading}>

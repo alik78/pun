@@ -2,9 +2,12 @@ import { useState, useEffect } from 'react';
 import { getFromCache, setCache } from './localCache';
 
 function getApiBaseUrl() {
-	return "http://api.staging.protectukrainenow.org/v1";
-	console.warn(JSON.stringify(import.meta.env, null, 2));
-	return '/api';
+	return import.meta.env.PROD
+		? "http://api.protectukrainenow.org/v1"
+		: "http://api.staging.protectukrainenow.org/v1"
+	//console.warn(JSON.stringify(import.meta.env, null, 2));
+	//return "http://api.staging.protectukrainenow.org/v1";
+	//return '/api';
 }
 
 
