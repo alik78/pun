@@ -2,15 +2,106 @@
 @import 'src/style/mixins';
 
 .container {
-	flex-grow: 1;
-
-	@include make-responsive('max-width', ( mobile-min: 355px, desktop: 900px ), 600px);
+	//flex-grow: 1;
+	//@include make-responsive('max-width', ( mobile-min: 355px, desktop: 600px ), 400px);
 	font-family: Roboto, Arial, sans-serif;
 	padding: 32px 0 21px;
+	max-width: 900px;
 
-	@include max-w(mobile) {
+	.header {
+		margin-bottom: 12px;
+
+		> a {
+			margin-bottom: 24px;
+		}
+
+		> p {
+			font-size: 16px;
+		}
+	}
+
+	section {
+		width: 100%;
+		background: white;
+		//max-width: 400px;
+		margin: 24px auto;
+		padding: 48px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		//text-align: center;
+	}
+
+	@include max-w(desktop) {
 		padding-left: 10px;
 		padding-right: 10px;
-		max-width: 100%;
+		//max-width: 100%;
+	}
+
+	h1 {
+		font-size: 30px;
+		text-transform: uppercase;
+		margin: 12px 0;
+	}
+
+	h2 {
+		font-size: 16px;
+		text-transform: uppercase;
+		color: #B7B7B7;
+	}
+
+	.member-content {
+		display: flex;
+		gap: 24px;
+
+		.content {
+			flex: 6;
+		}
+
+		.contact {
+			flex: 4;
+		}
+
+		> section {
+			> p {
+				margin-bottom: 12px;
+				display: grid;
+				grid-template-columns: auto 1fr;
+				grid-column-gap: 12px;
+				grid-row-gap: 12px;
+			}
+
+			h2 {
+				color: #555;
+				font-size: 18px;
+				margin-bottom: 24px;
+			}
+
+			strong {
+				color: #B7B7B7;
+			}
+
+			.social-media {
+				margin-top: 24px;
+
+				a {
+					text-decoration: none;
+					color: #333;
+					margin: 0 10px;
+					font-size: 24px;
+				}
+
+				a:hover {
+					color: #555;
+				}
+			}
+		}
+
+		@include max-w(tablet) {
+			flex-direction: column;
+			gap: 0;
+
+			> section {
+				margin: 12px 0;
+			}
+		}
 	}
 }
