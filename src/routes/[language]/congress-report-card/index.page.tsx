@@ -8,6 +8,7 @@ import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
 import cn from 'clsx'
 import { congressMemberDetailsUrl } from '../congress-member/[id].page'
+import React from 'react'
 
 type MemberBillVotePosition = 'yes' | 'no' | 'nio' | 'na';
 type MemberBillVoteFavor = 'yes' | 'no' | 'neutral';
@@ -56,13 +57,16 @@ type TableDataColumn = {
 	id: string;
 	title: string;
 	className?: string;
+	hideMobile?: boolean;
 }
 type TableDataCell = {
 	className: string[];
 	element: JSX.Element;
+	hideMobile?: boolean;
 }
 type TableDataRow = {
 	id: string;
+	data: ReportCardMember;
 	cells: TableDataCell[]
 };
 type TableData = {
@@ -76,14 +80,16 @@ function buildTableData(language: string, apiResponse: ReportCardResponse, text:
 			{
 				id: 'name',
 				title: text('report_card.header_name'),
-				className: 'header-name'
+				className: 'header-name',
+				hideMobile: true
 			},
 			{
 				id: 'location',
 				title: text('report_card.header_location'),
-				className: 'header-location'
+				className: 'header-location',
+				hideMobile: true
 			},
-			...apiResponse.bills.map<TableDataColumn>(bill => ({				
+			...apiResponse.bills.map<TableDataColumn>(bill => ({
 				id: bill.bill_number,
 				title: bill.title,
 				className: 'header-bill'
@@ -91,15 +97,18 @@ function buildTableData(language: string, apiResponse: ReportCardResponse, text:
 		],
 		rows: apiResponse.members.map<TableDataRow>(member => ({
 			id: member.member_id,
+			data: member,
 			cells: [
 				{
-					className:[],
+					className: [],
+					hideMobile: true,
 					element: <>
 						<a href={congressMemberDetailsUrl(member.member_id, language)}>{member.member_short_title} {member.member_name}</a>
 					</>
 				},
 				{
-					className: [],
+					className: ['hide-tablet'],
+					hideMobile: true,
 					element: <>
 						<span>{member.state}</span>
 						{member.district && <span>/{member.district}</span>}
@@ -153,22 +162,39 @@ export default function CongressReportCard() {
 
 	return (<Container className={style.container}>
 		<DataLoader isLoading={apiCall.isLoading}>
-			{tableData && <table className={style['ua-report-card-table']}>
-				<thead>
-					<tr>
-						{tableData.columns.map(column => <th key={column.title} className={style[column.className || '']}>
-							{column.title}
-						</th>)}
-					</tr>
-				</thead>
-				<tbody>
-					{tableData.rows.map(row => <tr key={row.id}>
-						{row.cells.map((cell, index) => <td key={index} className={cn(cell.className.map(x => style[x]))} >
-							{cell.element}
-						</td>)}
-					</tr>)}
-				</tbody>
-			</table>}
+			{tableData && <>
+				{/* Desktop */}
+				<table className={style['ua-report-card-table']}>
+					<thead>
+						<tr>
+							{tableData.columns.map(column => <th key={column.title} className={style[column.className || '']}>
+								{column.title}
+							</th>)}
+						</tr>
+					</thead>
+					<tbody>
+						{tableData.rows.map(row => <tr key={row.id}>
+							{row.cells.map((cell, index) => <td key={index} className={cn(cell.className.map(x => style[x]))} >
+								{cell.element}
+							</td>)}
+						</tr>)}
+					</tbody>
+				</table>
+
+				{/* mobile */}
+				{tableData.rows.map(row => <a className={style['mobile-link']} key={row.id} href={congressMemberDetailsUrl(row.data.member_id, language)} >
+					<section>
+						<h5>{row.data.member_short_title} {row.data.member_name}</h5>
+
+						{tableData.columns.map((column, index) => <React.Fragment key={column.title}>
+							{!column.hideMobile && <div>
+								<span className={cn(row.cells[index].className.map(x => style[x]))}>{row.cells[index].element}</span>
+								<span>{column.title}</span>
+							</div>}
+						</React.Fragment>)}
+					</section>
+				</a>)}
+			</>}
 		</DataLoader>
 	</Container>);
 }

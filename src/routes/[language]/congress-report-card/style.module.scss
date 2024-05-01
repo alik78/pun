@@ -4,14 +4,67 @@
 .container {
 	flex-grow: 1;
 
-	@include make-responsive('max-width', ( mobile-min: 355px, desktop: 900px ), 600px);
+	@include make-responsive('max-width', ( mobile: 455px, desktop: 900px ), 600px);
 	font-family: Roboto, Arial, sans-serif;
 	padding: 32px 0 21px;
+
+	section {
+		display: none;
+		width: 100%;
+		background: white;
+		//max-width: 400px;
+		margin: 18px auto;
+		padding: 24px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		//text-align: center;
+		gap: 10px;
+
+		h5 {
+			font-size: 20px;
+			margin-bottom: 12px;
+		}
+
+		div {
+			display: flex;
+			gap: 6px;
+
+			span:first-child {
+				span:last-child {
+					display: none;
+				}
+			}
+		}
+	}
+
+	@include max-w(tablet) {
+		.hide-tablet, .header-location {
+			display: none !important;
+		}
+	}
+
 
 	@include max-w(mobile) {
 		padding-left: 10px;
 		padding-right: 10px;
 		max-width: 100%;
+
+		section {
+			display: flex;
+			flex-direction: column;
+		}
+
+		table {
+			display: none;
+		}
+	}
+
+	.mobile-link {
+		color: rgb(68, 68, 68);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -31,32 +84,7 @@
 		padding: 0.5em;
 	}
 
-	.vote-cell {
-		text-align: center;
-		color: darkgray;
-	}
 
-	.vote-favor-positive, .vote-favor-negative, .vote-favor-neutral {
-		color: inherit;
-	}
-
-	.vote-cell-icon {
-		margin: 0 0.2em;
-		font-size: 1.1em;
-		font-weight: bold;
-	}
-
-	.vote-favor-neutral .vote-cell-icon {
-		color: darkgray;
-	}
-
-	.vote-favor-positive .vote-cell-icon {
-		color: green;
-	}
-
-	.vote-favor-negative .vote-cell-icon {
-		color: red;
-	}
 
 	tr:nth-child(even) {
 		background: #E5E5E5;
@@ -83,4 +111,35 @@
 			width: 130px;
 		}
 	}
+}
+
+.vote-cell {
+	text-align: center;
+	color: darkgray;
+
+	@include max-w(mobile) {
+		text-align: left;
+	}
+}
+
+.vote-favor-positive, .vote-favor-negative, .vote-favor-neutral {
+	color: inherit;
+}
+
+.vote-cell-icon {
+	margin: 0 0.2em;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.vote-favor-neutral .vote-cell-icon {
+	color: darkgray;
+}
+
+.vote-favor-positive .vote-cell-icon {
+	color: green;
+}
+
+.vote-favor-negative .vote-cell-icon {
+	color: red;
 }
