@@ -196,7 +196,7 @@
 			},
 			{
 				"model": "M270",
-				"us": 225
+				"us": 226
 			},
 			{
 				"model": "BM-30 Smerch",
@@ -221,11 +221,11 @@
 			},
 			{
 				"model": "M270 (in store)",
-				"us": 766
+				"us": 160
 			}
 		],
 		"ua": 360,
-		"us": 1401
+		"us": 796
 	},
 	{
 		"category": "Air Defense System",

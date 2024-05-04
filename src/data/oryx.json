@@ -698,12 +698,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 57,
-				"captured": 1
+				"lost": 63,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 22,
-				"captured": 3
+				"lost": 54,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -780,12 +780,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 71,
-				"captured": 1
+				"lost": 63,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 23,
-				"captured": 3
+				"lost": 55,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -862,12 +862,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 74,
-				"captured": 1
+				"lost": 67,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 28,
-				"captured": 3
+				"lost": 55,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -944,12 +944,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 75,
-				"captured": 1
+				"lost": 69,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 29,
-				"captured": 3
+				"lost": 57,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1026,12 +1026,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 78,
-				"captured": 1
+				"lost": 75,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 31,
-				"captured": 3
+				"lost": 59,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1108,12 +1108,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 80,
-				"captured": 1
+				"lost": 78,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 30,
-				"captured": 3
+				"lost": 62,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1190,12 +1190,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 84,
-				"captured": 1
+				"lost": 80,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 29,
-				"captured": 3
+				"lost": 66,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1272,12 +1272,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 90,
-				"captured": 1
+				"lost": 82,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 30,
-				"captured": 3
+				"lost": 67,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1354,12 +1354,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 98,
-				"captured": 1
+				"lost": 83,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 31,
-				"captured": 3
+				"lost": 68,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1436,12 +1436,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 100,
-				"captured": 1
+				"lost": 84,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 31,
-				"captured": 3
+				"lost": 69,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1518,12 +1518,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 104,
-				"captured": 2
+				"lost": 88,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 34,
-				"captured": 3
+				"lost": 71,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1600,12 +1600,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 106,
-				"captured": 2
+				"lost": 92,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 37,
-				"captured": 3
+				"lost": 73,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1682,12 +1682,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 132,
-				"captured": 2
+				"lost": 93,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 37,
-				"captured": 3
+				"lost": 77,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1764,12 +1764,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 132,
-				"captured": 2
+				"lost": 94,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 36,
-				"captured": 3
+				"lost": 78,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1846,12 +1846,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 134,
-				"captured": 2
+				"lost": 99,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 36,
-				"captured": 3
+				"lost": 77,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1928,12 +1928,12 @@
 		},
 		"Warplane": {
 			"ru": {
-				"lost": 135,
-				"captured": 2
+				"lost": 102,
+				"captured": 0
 			},
 			"ua": {
-				"lost": 37,
-				"captured": 3
+				"lost": 79,
+				"captured": 1
 			}
 		},
 		"Helicopter": {
@@ -1964,6 +1964,88 @@
 			"ua": {
 				"lost": 837,
 				"captured": 114
+			}
+		}
+	},
+	"2024-02": {
+		"Towed Artillery": {
+			"ru": {
+				"lost": 347,
+				"captured": 100
+			},
+			"ua": {
+				"lost": 186,
+				"captured": 18
+			}
+		},
+		"Self-Propelled Artillery": {
+			"ru": {
+				"lost": 682,
+				"captured": 107
+			},
+			"ua": {
+				"lost": 295,
+				"captured": 24
+			}
+		},
+		"Multiple Launch Rocket System": {
+			"ru": {
+				"lost": 353,
+				"captured": 54
+			},
+			"ua": {
+				"lost": 56,
+				"captured": 8
+			}
+		},
+		"Air Defense System": {
+			"ru": {
+				"lost": 237,
+				"captured": 32
+			},
+			"ua": {
+				"lost": 147,
+				"captured": 9
+			}
+		},
+		"Warplane": {
+			"ru": {
+				"lost": 105,
+				"captured": 0
+			},
+			"ua": {
+				"lost": 80,
+				"captured": 1
+			}
+		},
+		"Helicopter": {
+			"ru": {
+				"lost": 135,
+				"captured": 2
+			},
+			"ua": {
+				"lost": 38,
+				"captured": 3
+			}
+		},
+		"Tank": {
+			"ru": {
+				"lost": 2764,
+				"captured": 539
+			},
+			"ua": {
+				"lost": 749,
+				"captured": 131
+			}
+		},
+		"Infantry Fighting Vehicle": {
+			"ru": {
+				"lost": 3513,
+				"captured": 620
+			},
+			"ua": {
+				"lost": 868,
+				"captured": 118
 			}
 		}
 	}

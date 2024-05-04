@@ -9,14 +9,6 @@
 	],
 	[
 		"2022-04-05",
-		"ee",
-		"Towed Artillery",
-		"D-30 122mm",
-		9,
-		"https://mil.in.ua/en/news/officially-estonia-has-sent-122-mm-howitzers-to-ukraine/"
-	],
-	[
-		"2022-04-05",
 		"cz",
 		"Infantry Fighting Vehicle",
 		"BMP-1",
@@ -24,12 +16,12 @@
 		"https://twitter.com/UAWeapons/status/1511400930364825605"
 	],
 	[
-		"2022-04-08",
-		"sk",
-		"Air Defense System",
-		"S-300",
-		2,
-		"https://newlinesinstitute.org/ukraine/what-heavy-weapons-the-west-has-and-hasnt-sent-ukraine/"
+		"2022-04-05",
+		"ee",
+		"Towed Artillery",
+		"D-30 122mm",
+		9,
+		"https://mil.in.ua/en/news/officially-estonia-has-sent-122-mm-howitzers-to-ukraine/"
 	],
 	[
 		"2022-04-08",
@@ -40,12 +32,12 @@
 		"https://www.mzv.cz/un.newyork/en/news_events/czechia_sends_hundreds_of_heavy_military.html"
 	],
 	[
-		"2022-04-13",
-		"cz",
-		"Self-Propelled Artillery",
-		"DANA 152mm",
-		38,
-		"https://www.wsj.com/livecoverage/russia-ukraine-latest-news-2022-04-13/card/czech-republic-supplies-heavy-weapons-to-ukraine-wgT3jSDz1RwRr9JZhzeL"
+		"2022-04-08",
+		"sk",
+		"Air Defense System",
+		"S-300",
+		2,
+		"https://newlinesinstitute.org/ukraine/what-heavy-weapons-the-west-has-and-hasnt-sent-ukraine/"
 	],
 	[
 		"2022-04-13",
@@ -53,6 +45,14 @@
 		"Multiple Launch Rocket System",
 		"BM-21 Grad",
 		33,
+		"https://www.wsj.com/livecoverage/russia-ukraine-latest-news-2022-04-13/card/czech-republic-supplies-heavy-weapons-to-ukraine-wgT3jSDz1RwRr9JZhzeL"
+	],
+	[
+		"2022-04-13",
+		"cz",
+		"Self-Propelled Artillery",
+		"DANA 152mm",
+		38,
 		"https://www.wsj.com/livecoverage/russia-ukraine-latest-news-2022-04-13/card/czech-republic-supplies-heavy-weapons-to-ukraine-wgT3jSDz1RwRr9JZhzeL"
 	],
 	[
@@ -97,19 +97,19 @@
 	],
 	[
 		"2022-04-25",
-		"nl",
-		"Self-Propelled Artillery",
-		"PzH 2000 155mm",
-		5,
-		"https://www.oryxspioenkop.com/2022/04/beyond-call-dutch-arms-deliveries-to.html"
-	],
-	[
-		"2022-04-25",
 		"de",
 		"Air Defense System",
 		"Flakpanzer Gepard",
 		30,
 		"https://www.bundesregierung.de/breg-en/news/military-support-ukraine-2054992"
+	],
+	[
+		"2022-04-25",
+		"nl",
+		"Self-Propelled Artillery",
+		"PzH 2000 155mm",
+		5,
+		"https://www.oryxspioenkop.com/2022/04/beyond-call-dutch-arms-deliveries-to.html"
 	],
 	[
 		"2022-04-27",
@@ -122,16 +122,16 @@
 	[
 		"2022-04-29",
 		"pl",
-		"Self-Propelled Artillery",
-		"Gvozdika 122mm",
+		"Multiple Launch Rocket System",
+		"BM-21 Grad",
 		20,
 		"https://www.polskieradio.pl/395/7785/Artykul/2948382"
 	],
 	[
 		"2022-04-29",
 		"pl",
-		"Multiple Launch Rocket System",
-		"BM-21 Grad",
+		"Self-Propelled Artillery",
+		"Gvozdika 122mm",
 		20,
 		"https://www.polskieradio.pl/395/7785/Artykul/2948382"
 	],
@@ -145,19 +145,19 @@
 	],
 	[
 		"2022-05-03",
-		"cz",
-		"Tank",
-		"T-72",
-		44,
-		"https://newlinesinstitute.org/ukraine/what-heavy-weapons-the-west-has-and-hasnt-sent-ukraine/"
-	],
-	[
-		"2022-05-03",
 		"de",
 		"Self-Propelled Artillery",
 		"PzH 2000 155mm",
 		7,
 		"https://www.welt.de/politik/deutschland/article238522185/Waffenlieferungen-Bundesregierung-will-Panzerhaubitzen-2000-an-die-Ukraine-liefern.html"
+	],
+	[
+		"2022-05-03",
+		"cz",
+		"Tank",
+		"T-72",
+		44,
+		"https://newlinesinstitute.org/ukraine/what-heavy-weapons-the-west-has-and-hasnt-sent-ukraine/"
 	],
 	[
 		"2022-05-08",
@@ -233,14 +233,6 @@
 	],
 	[
 		"2022-06-05",
-		"no",
-		"Self-Propelled Artillery",
-		"M109 155mm",
-		21,
-		"https://www.regjeringen.no/en/aktuelt/norge-har-donert-artilleriskyts-til-ukraina/id2917760/"
-	],
-	[
-		"2022-06-05",
 		"gr",
 		"Infantry Fighting Vehicle",
 		"BMP-1",
@@ -248,12 +240,12 @@
 		"https://mil.in.ua/en/news/greece-disclosed-the-amount-and-types-of-weapons-handed-over-to-ukraine/"
 	],
 	[
-		"2022-06-15",
-		"sk",
-		"Helicopter",
-		"Mi-17",
-		4,
-		"https://theaviationgeekclub.com/slovakia-secretly-delivered-four-mil-mi-17-hips-and-one-mil-mi-2-hoplite-to-ukraine/"
+		"2022-06-05",
+		"no",
+		"Self-Propelled Artillery",
+		"M109 155mm",
+		21,
+		"https://www.regjeringen.no/en/aktuelt/norge-har-donert-artilleriskyts-til-ukraina/id2917760/"
 	],
 	[
 		"2022-06-15",
@@ -278,6 +270,14 @@
 		"M777 155mm",
 		18,
 		"https://www.defense.gov/News/Releases/Release/Article/3073551/fact-sheet-on-us-security-assistance-to-ukraine/"
+	],
+	[
+		"2022-06-15",
+		"sk",
+		"Helicopter",
+		"Mi-17",
+		4,
+		"https://theaviationgeekclub.com/slovakia-secretly-delivered-four-mil-mi-17-hips-and-one-mil-mi-2-hoplite-to-ukraine/"
 	],
 	[
 		"2022-06-16",
@@ -313,6 +313,14 @@
 	],
 	[
 		"2022-06-24",
+		"de",
+		"Air Defense System",
+		"IRIS-T",
+		3,
+		"https://www.bundesregierung.de/breg-en/news/military-support-ukraine-2054992"
+	],
+	[
+		"2022-06-24",
 		"bg",
 		"Warplane",
 		"Su-25",
@@ -324,16 +332,8 @@
 		"fr",
 		"Towed Artillery",
 		"TRF1 155mm",
-		15,
+		6,
 		"https://www.lepoint.fr/monde/guerre-en-ukraine-macron-annonce-l-envoi-de-canons-caesar-12-10-2022-2493567_24.php"
-	],
-	[
-		"2022-06-24",
-		"de",
-		"Air Defense System",
-		"IRIS-T",
-		3,
-		"https://www.bundesregierung.de/breg-en/news/military-support-ukraine-2054992"
 	],
 	[
 		"2022-06-28",
@@ -353,11 +353,11 @@
 	],
 	[
 		"2022-06-30",
-		"gb",
-		"Towed Artillery",
-		"M119 105mm",
-		36,
-		"https://www.gov.uk/government/news/uk-to-send-scores-of-artillery-guns-and-hundreds-of-drones-to-ukraine"
+		"ca",
+		"Infantry Fighting Vehicle",
+		"LAV 6",
+		39,
+		"https://www.canada.ca/en/department-national-defence/campaigns/canadian-military-support-to-ukraine.html"
 	],
 	[
 		"2022-06-30",
@@ -369,11 +369,11 @@
 	],
 	[
 		"2022-06-30",
-		"ca",
-		"Infantry Fighting Vehicle",
-		"LAV 6",
-		39,
-		"https://www.canada.ca/en/department-national-defence/campaigns/canadian-military-support-to-ukraine.html"
+		"gb",
+		"Towed Artillery",
+		"M119 105mm",
+		36,
+		"https://www.gov.uk/government/news/uk-to-send-scores-of-artillery-guns-and-hundreds-of-drones-to-ukraine"
 	],
 	[
 		"2022-07-01",
@@ -451,7 +451,7 @@
 		"2022-08-15",
 		"lv",
 		"Helicopter",
-		"Mi-17",
+		"Mi-2",
 		2,
 		"https://babel.ua/en/news/82974-latvia-transferred-mi-17-and-mi-2-helicopters-to-ukraine"
 	],
@@ -459,7 +459,7 @@
 		"2022-08-15",
 		"lv",
 		"Helicopter",
-		"Mi-2",
+		"Mi-17",
 		2,
 		"https://babel.ua/en/news/82974-latvia-transferred-mi-17-and-mi-2-helicopters-to-ukraine"
 	],
@@ -722,18 +722,34 @@
 	[
 		"2023-01-15",
 		"gb",
+		"Self-Propelled Artillery",
+		"AS-90 155mm",
+		8,
+		"https://www.reuters.com/world/europe/uk-defence-minister-sets-out-further-military-aid-package-ukraine-2023-01-16/"
+	],
+	[
+		"2023-01-15",
+		"gb",
 		"Tank",
 		"Challenger 2",
 		14,
 		"https://www.bbc.com/news/uk-64274755"
 	],
 	[
-		"2023-01-15",
-		"gb",
+		"2023-01-19",
+		"us",
+		"Infantry Fighting Vehicle",
+		"Bradley",
+		59,
+		"https://www.defense.gov/News/Releases/Release/Article/3272866/biden-administration-announces-additional-security-assistance-for-ukraine/"
+	],
+	[
+		"2023-01-19",
+		"dk",
 		"Self-Propelled Artillery",
-		"AS-90 155mm",
-		8,
-		"https://www.reuters.com/world/europe/uk-defence-minister-sets-out-further-military-aid-package-ukraine-2023-01-16/"
+		"CAESAR 155mm",
+		19,
+		"https://defbrief.com/2023/01/19/denmark-donating-all-of-its-caesar-howitzers-to-ukraine/"
 	],
 	[
 		"2023-01-19",
@@ -747,17 +763,25 @@
 		"2023-01-19",
 		"ee",
 		"Towed Artillery",
-		"FH70 155mm",
-		24,
+		"D-30 122mm",
+		27,
 		"https://www.kaitseministeerium.ee/en/news/estonian-minister-defence-allies-must-give-ukraine-heavy-weaponry"
 	],
 	[
 		"2023-01-19",
 		"ee",
 		"Towed Artillery",
-		"D-30 122mm",
-		27,
+		"FH70 155mm",
+		24,
 		"https://www.kaitseministeerium.ee/en/news/estonian-minister-defence-allies-must-give-ukraine-heavy-weaponry"
+	],
+	[
+		"2023-01-19",
+		"lt",
+		"Helicopter",
+		"Mi-8",
+		2,
+		"https://www.gov.uk/government/news/joint-statement-the-tallinn-pledge"
 	],
 	[
 		"2023-01-19",
@@ -771,33 +795,9 @@
 		"2023-01-19",
 		"us",
 		"Infantry Fighting Vehicle",
-		"Bradley",
-		59,
-		"https://www.defense.gov/News/Releases/Release/Article/3272866/biden-administration-announces-additional-security-assistance-for-ukraine/"
-	],
-	[
-		"2023-01-19",
-		"us",
-		"Infantry Fighting Vehicle",
 		"Stryker",
 		90,
 		"https://www.defense.gov/News/Releases/Release/Article/3272866/biden-administration-announces-additional-security-assistance-for-ukraine/"
-	],
-	[
-		"2023-01-19",
-		"dk",
-		"Self-Propelled Artillery",
-		"CAESAR 155mm",
-		19,
-		"https://defbrief.com/2023/01/19/denmark-donating-all-of-its-caesar-howitzers-to-ukraine/"
-	],
-	[
-		"2023-01-19",
-		"lt",
-		"Helicopter",
-		"Mi-8",
-		2,
-		"https://www.gov.uk/government/news/joint-statement-the-tallinn-pledge"
 	],
 	[
 		"2023-01-26",
@@ -819,6 +819,14 @@
 		"2023-01-27",
 		"pl",
 		"Tank",
+		"Leopard 2",
+		14,
+		"https://www.aa.com.tr/en/russia-ukraine-war/poland-to-send-60-more-tanks-to-ukraine-in-addition-to-14-leopard-2/2799176"
+	],
+	[
+		"2023-01-27",
+		"pl",
+		"Tank",
 		"PT-91 Twardy",
 		30,
 		"https://www.aa.com.tr/en/russia-ukraine-war/poland-to-send-60-more-tanks-to-ukraine-in-addition-to-14-leopard-2/2799176"
@@ -829,14 +837,6 @@
 		"Tank",
 		"T-72",
 		30,
-		"https://www.aa.com.tr/en/russia-ukraine-war/poland-to-send-60-more-tanks-to-ukraine-in-addition-to-14-leopard-2/2799176"
-	],
-	[
-		"2023-01-27",
-		"pl",
-		"Tank",
-		"Leopard 2",
-		14,
 		"https://www.aa.com.tr/en/russia-ukraine-war/poland-to-send-60-more-tanks-to-ukraine-in-addition-to-14-leopard-2/2799176"
 	],
 	[
@@ -897,11 +897,11 @@
 	],
 	[
 		"2023-02-24",
-		"cz",
+		"ca",
 		"Tank",
-		"T-72",
-		45,
-		"https://en.defence-ua.com/weapon_and_tech/the_czech_republic_to_update_90_t_72b_tanks_for_ukraine_worth_1_million_dollars_each_the_arrival_dates_of_vehles_are_named-4755.html"
+		"Leopard 2",
+		4,
+		"https://www.ctvnews.ca/politics/canada-sending-four-more-battle-tanks-to-ukraine-1.6288251"
 	],
 	[
 		"2023-02-24",
@@ -913,11 +913,11 @@
 	],
 	[
 		"2023-02-24",
-		"ca",
+		"cz",
 		"Tank",
-		"Leopard 2",
-		4,
-		"https://www.ctvnews.ca/politics/canada-sending-four-more-battle-tanks-to-ukraine-1.6288251"
+		"T-72",
+		45,
+		"https://en.defence-ua.com/weapon_and_tech/the_czech_republic_to_update_90_t_72b_tanks_for_ukraine_worth_1_million_dollars_each_the_arrival_dates_of_vehles_are_named-4755.html"
 	],
 	[
 		"2023-02-25",
@@ -953,6 +953,14 @@
 	],
 	[
 		"2023-03-17",
+		"sk",
+		"Air Defense System",
+		"2K12 Kub",
+		2,
+		"https://www.mosr.sk/52628-en/minister-obrany-j-nad-podpisal-medzivladnu-dohodu-s-ukrajinou/"
+	],
+	[
+		"2023-03-17",
 		"pl",
 		"Warplane",
 		"MiG-29",
@@ -968,12 +976,12 @@
 		"https://www.mosr.sk/52628-en/minister-obrany-j-nad-podpisal-medzivladnu-dohodu-s-ukrajinou/"
 	],
 	[
-		"2023-03-17",
-		"sk",
-		"Air Defense System",
-		"2K12 Kub",
-		2,
-		"https://www.mosr.sk/52628-en/minister-obrany-j-nad-podpisal-medzivladnu-dohodu-s-ukrajinou/"
+		"2023-03-20",
+		"gb",
+		"Self-Propelled Artillery",
+		"AS-90 155mm",
+		24,
+		"https://www.19fortyfive.com/2023/03/here-comes-the-big-guns-britain-is-replacing-weapons-sent-to-ukraine/"
 	],
 	[
 		"2023-03-20",
@@ -982,14 +990,6 @@
 		"CAESAR 155mm",
 		6,
 		"https://www.theguardian.com/world/live/2023/jan/31/russia-ukraine-war-live-biden-says-the-us-will-not-provide-f-16-fighter-jets-to-ukraine"
-	],
-	[
-		"2023-03-20",
-		"gb",
-		"Self-Propelled Artillery",
-		"AS-90 155mm",
-		24,
-		"https://www.19fortyfive.com/2023/03/here-comes-the-big-guns-britain-is-replacing-weapons-sent-to-ukraine/"
 	],
 	[
 		"2023-03-31",
@@ -1292,7 +1292,7 @@
 		"fr",
 		"Tank",
 		"AMX-10 RC",
-		26,
+		24,
 		"https://bulgarianmilitary.com/2023/11/01/part-of-the-french-amx-10rcs-to-kyiv-are-for-ukrainian-marines/"
 	],
 	[
@@ -1334,5 +1334,45 @@
 		"Flakpanzer Gepard",
 		3,
 		"https://www.bundesregierung.de/breg-en/news/military-support-ukraine-2054992"
+	],
+	[
+		"2024-01-04",
+		"de",
+		"Infantry Fighting Vehicle",
+		"Marder",
+		10,
+		"https://www.bundesregierung.de/breg-en/news/military-support-ukraine-2054992"
+	],
+	[
+		"2024-01-04",
+		"de",
+		"Air Defense System",
+		"Skynex",
+		1,
+		"https://www.bundesregierung.de/breg-en/news/military-support-ukraine-2054992"
+	],
+	[
+		"2024-01-26",
+		"fr",
+		"Multiple Launch Rocket System",
+		"M270",
+		2,
+		"https://kyivindependent.com/france-provides-2-more-m270-rocket-launchers-to-ukraine/"
+	],
+	[
+		"2024-03-01",
+		"ar",
+		"Helicopter",
+		"Mi-17",
+		2,
+		"https://english.nv.ua/nation/argentina-gifts-ukraine-helicopters-initially-acquired-from-russia-report-50397676.html"
+	],
+	[
+		"2024-04-24",
+		"us",
+		"Infantry Fighting Vehicle",
+		"Bradley",
+		15,
+		"https://www.defense.gov/News/Releases/Release/Article/3754238/biden-administration-announces-significant-new-security-assistance-for-ukraine/"
 	]
 ]
