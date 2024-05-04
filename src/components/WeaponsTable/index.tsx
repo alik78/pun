@@ -9,7 +9,7 @@ import { assocPath } from 'rambda'
 
 const WeaponsTable = ({ title, subtitle, head, data, description, Details }) => {
 	const [expanded, setExpanded] = useState([])
-	console.log('expanded', expanded)
+	// console.log('expanded', expanded)
 	const toggle = i => () => {
 		console.log('toggle', i)
 		setExpanded(assocPath(i + '', !expanded[i], expanded))

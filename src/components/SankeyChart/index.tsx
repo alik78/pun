@@ -18,8 +18,8 @@ export default function SankeyChart() {
 	const subtitle = text('sankey.subtitle', { from, till })
 	const description = text('sankey.description')
 	let json = JSON.stringify(spec)
-	Object.entries(texts[useLanguage()].sankey).forEach(([key, val]) => {
-		json = json.replaceAll(`${key}`, `${val}`)
+	Object.entries(texts[useLanguage()].sankey).slice(3).forEach(([key, val]) => {
+		json = json.replaceAll(key, val)
 	})
 	return (
 		<Section {...{ title, subtitle, description }} >

@@ -1,6 +1,4 @@
-import fs, { writeFileSync } from 'fs'
-import { indexBy } from 'rambda'
-import dayjs from 'dayjs'
+import fs from 'fs'
 
 import balance from './balance.json' with { type: 'json' }
 import commits from './commits.json' with { type: 'json' }
@@ -28,6 +26,25 @@ commits.forEach(([date, country, category, model, qty]) => {
 	oryx[month][category].ua.provided = (oryx[month][category].ua.provided || 0) + qty
 })
 
+let next
+Object.values(oryx).reverse().forEach(x => {
+	Object.entries(x).forEach(([category, { ru, ua }]) => {
+		if (ru.lost > next?.[category].ru.lost) {
+			ru.lost = next[category].ru.lost
+		}
+		if (ua.lost > next?.[category].ua.lost) {
+			ua.lost = next[category].ua.lost
+		}
+		if (ru.captured > next?.[category].ru.captured) {
+			ru.captured = next[category].ru.captured
+		}
+		if (ua.captured > next?.[category].ua.captured) {
+			ua.captured = next[category].ua.captured
+		}
+	})
+	next = x
+})
+
 let prev
 Object.values(oryx).forEach(x => {
 	Object.entries(x).forEach(([category, { ru, ua }]) => {
@@ -50,5 +67,4 @@ let combo = Object.entries(oryx).flatMap(([month, x]) =>
 
 const header = 'month\tcategory\tcountry\thad\tlost\tcaptured\tprovided\n'
 const rows = [...balance2, ...combo].map(x => x.join('\t')).join('\n')
-writeFileSync(file, header + rows)
-
+fs.writeFileSync(file, header + rows)

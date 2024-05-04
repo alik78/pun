@@ -28,12 +28,13 @@ const empty = Object.fromEntries(Object.values(what).map(what =>
 	[what, map(_ => ({ lost: 0, captured: 0 }), countries)]
 ))
 
-function extract(page, what, country) {
-	const re = new RegExp(`>${what}.*\\((\\d+),[^)]*?(?:captured: (\\d+))?\\)`)
+function extract(page, what, country, date) {
+	const re = new RegExp(`>${what}[^(]*\\((\\d+),[^)]*?(?:captured: (\\d+))?\\)`)
 	const i = page.indexOf(`${countries[country]} - `)
 	const match = page.slice(i).match(re)
-	if (!match) {
-		console.error(`NO MATCH: ${what}`)
+	if (!match && date >= '2022-03') {
+		// console.error(`NO MATCH: ${what}`)
+		throw Error(`NO MATCH: ${what}`)
 	}
 	const [_, lost, captured] = match || [0, 0, 0]
 	// console.log(what, { lost, captured })
@@ -58,7 +59,7 @@ for (;;) {
 		}).then(x => x.text())
 		// fs.writeFileSync('oryx.html', page)
 		const rows = Object.entries(what).forEach(([what, category]) => {
-			let [lost, captured] = extract(page, what, country)
+			let [lost, captured] = extract(page, what, country, date)
 			console.log(country, what, lost, captured)
 			current[category][country].lost += +lost
 			current[category][country].captured += +captured

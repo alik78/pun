@@ -8,6 +8,9 @@ import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
 import cn from 'clsx'
 
+const schemaCropString = '://';
+const cropSchemaPart = (url: string) => url.indexOf(schemaCropString) >= 0 ? url.substring(url.indexOf(schemaCropString) + schemaCropString.length) : url;
+
 export const congressMemberDetailsUrl = (memberID: string, language: string) => `/${language}/congress-member/${memberID}`;
 
 export default function CongressMember({ params }) {
@@ -59,8 +62,8 @@ export default function CongressMember({ params }) {
 						<h2>Contact Information</h2>
 						<p>
 							{member.url && <>
-								<strong>Profile on</strong>
-								<span><a target="_blank" href={member.url}>senate.gov</a></span>
+								<strong>Profile</strong>
+								<span><a target="_blank" href={member.url}>{cropSchemaPart(member.url)}</a></span>
 							</>}
 							{member.phone && <>
 								<strong>Phone</strong>
