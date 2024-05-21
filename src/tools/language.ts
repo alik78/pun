@@ -38,3 +38,12 @@ export function replaceLanguageInUrl(url, language) {
 	a[1] = language
 	return a.join('/')
 }
+
+export function useSankey(spec) {
+	let json = JSON.stringify(spec)
+	Object.entries(text[useLanguage()].sankey).slice(3).forEach(([key, val]) => {
+		json = json.replaceAll(key, `\\"${val.replaceAll('"', '\\\\"')}\\"`)
+		// json = json.replaceAll(key, val)
+	})
+	return JSON.parse(json)
+}

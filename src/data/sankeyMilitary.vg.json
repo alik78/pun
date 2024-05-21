@@ -47,7 +47,7 @@
   "data": [
     {
       "name": "entries",
-      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT7ok1ZDyU1Lz37NIZAMrSv7u_xL4SjWQcXIj5RWj4qzsgbIiU-wqmEK8kwtsMeVt_qTuEVIPgRiLiE/pub?gid=1885277555&single=true&output=csv",
+      "url": "https://docs.google.com/spreadsheets/d/1Q9aLVoSZ9vTKH0VLnMpFRiY6h0kV6Rcb16R4lP0rUFs/export?format=csv&id=1Q9aLVoSZ9vTKH0VLnMpFRiY6h0kV6Rcb16R4lP0rUFs&gid=1809221022",
       "format": {
         "type": "csv",
         "parse": {
@@ -61,7 +61,7 @@
     },
     {
       "name": "connections",
-      "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vT7ok1ZDyU1Lz37NIZAMrSv7u_xL4SjWQcXIj5RWj4qzsgbIiU-wqmEK8kwtsMeVt_qTuEVIPgRiLiE/pub?gid=1480746214&single=true&output=csv",
+      "url": "https://docs.google.com/spreadsheets/d/1Q9aLVoSZ9vTKH0VLnMpFRiY6h0kV6Rcb16R4lP0rUFs/export?format=csv&id=1Q9aLVoSZ9vTKH0VLnMpFRiY6h0kV6Rcb16R4lP0rUFs&gid=977981274",
       "format": {
         "type": "csv",
         "parse": {

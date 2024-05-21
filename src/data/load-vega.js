@@ -2,6 +2,8 @@ import fs from 'fs'
 import vl from 'vega-lite'
 
 import sankey from './sankey.vg.json' assert { type: "json" }
+import sankey24 from './sankey24.vg.json' assert { type: "json" }
+import sankeyMilitary from './sankeyMilitary.vg.json' assert { type: "json" }
 import pda from './pda.vl.json' assert { type: "json" }
 
 function loadVega(specs) {
@@ -20,5 +22,7 @@ function loadVega(specs) {
 
 loadVega({
     sankey,
+    sankey24,
+    sankeyMilitary,
     pda: vl.compile(pda).spec,
 })
