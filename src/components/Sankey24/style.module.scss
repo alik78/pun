@@ -1,0 +1,7 @@
+@import './src/style/variables';
+@import './src/style/mixins';
+
+.chart {
+	@include container-padding;
+	aspect-ratio: 2 / 1;
+}

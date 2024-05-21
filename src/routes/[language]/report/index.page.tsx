@@ -11,9 +11,10 @@ import WeaponsIncome from 'src/components/WeaponsIncome'
 import WeaponsInventory from 'src/components/WeaponsInventory'
 import Banner from 'src/components/Banner'
 import reportBannerImage from 'src/assets/banner-bg.webp'
-import SankeyChart from 'src/components/SankeyChart'
+import Sankey from 'src/components/Sankey'
+import Sankey24 from 'src/components/Sankey24'
+import SankeyMilitary from 'src/components/SankeyMilitary'
 import PdaChart from 'src/components/PdaChart'
-import Summary from 'src/components/Summary'
 
 export default function Report() {
 	const language = useLanguage()
@@ -23,7 +24,6 @@ export default function Report() {
 	return (
 		<>
 			<Container className={style.container}>
-				<Summary />
 				<WeaponsIncome />
 				<WeaponsBalance />
 				<WeaponsInventory />
@@ -43,7 +43,13 @@ export default function Report() {
 				</ClientOnly>
 			}
 			<Container className={style.container}>
-				<SankeyChart />
+				<Sankey24 />
+			</Container>
+			<Container className={style.container}>
+				<Sankey />
+			</Container>
+			<Container className={style.container}>
+				<SankeyMilitary />
 			</Container>
 			<Container className={style.container}>
 				<PdaChart />
