@@ -3,7 +3,7 @@ import { useApp } from 'src/tools/app'
 import { useLanguage, useText } from 'src/tools/language'
 import { useCountry } from 'src/tools/country'
 import { useApi, useApiCached } from '../../../tools/useApiCall'
-import { ReportCardBill, ReportCardMember, ReportCardResponse } from '../../../api/report-card.models'
+import { Member as ReportCardMember, Root as ReportCardResponse } from '../../../api/congress-report-card.models'
 import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
 import cn from 'clsx'
@@ -13,45 +13,45 @@ import React from 'react'
 type MemberBillVotePosition = 'yes' | 'no' | 'nio' | 'na';
 type MemberBillVoteFavor = 'yes' | 'no' | 'neutral';
 
-type MemberBillVote = {
-	id: string;
-	position: MemberBillVotePosition;
-	favor: MemberBillVoteFavor;
-};
+//type MemberBillVote = {
+//	id: string;
+//	position: MemberBillVotePosition;
+//	favor: MemberBillVoteFavor;
+//};
 
-function buildMemberBillVote(bill: ReportCardBill, member: ReportCardMember): MemberBillVote {
-	const uid = `${member.member_id}${bill.bill_number}`;
-	const vote = member.bills.find(b => b.bill_number == bill.bill_number);
-	if (!vote) {
-		return { id: uid, position: 'na', favor: 'neutral' };
-	}
+//function buildMemberBillVote(bill: ReportCardBill, member: ReportCardMember): MemberBillVote {
+//	const uid = `${member.member_id}${bill.bill_number}`;
+//	const vote = member.bills.find(b => b.bill_number == bill.bill_number);
+//	if (!vote) {
+//		return { id: uid, position: 'na', favor: 'neutral' };
+//	}
 
-	let positionValue: MemberBillVotePosition = 'na';
-	switch (vote.vote_position) {
-		case 'Yes':
-			positionValue = 'yes';
-			break;
-		case 'No':
-			positionValue = 'no';
-			break;
-		case 'Not In Office':
-			positionValue = 'nio';
-			break;
-	}
+//	let positionValue: MemberBillVotePosition = 'na';
+//	switch (vote.vote_position) {
+//		case 'Yes':
+//			positionValue = 'yes';
+//			break;
+//		case 'No':
+//			positionValue = 'no';
+//			break;
+//		case 'Not In Office':
+//			positionValue = 'nio';
+//			break;
+//	}
 
-	let favorValue: MemberBillVoteFavor = 'neutral';
-	if (bill.in_favor === true) {
-		favorValue = 'yes';
-	} else if (bill.in_favor === false) {
-		favorValue = 'no';
-	}
+//	let favorValue: MemberBillVoteFavor = 'neutral';
+//	if (bill.in_favor === true) {
+//		favorValue = 'yes';
+//	} else if (bill.in_favor === false) {
+//		favorValue = 'no';
+//	}
 
-	return {
-		id: uid,
-		position: positionValue,
-		favor: favorValue
-	};
-}
+//	return {
+//		id: uid,
+//		position: positionValue,
+//		favor: favorValue
+//	};
+//}
 
 type TableDataColumn = {
 	id: string;

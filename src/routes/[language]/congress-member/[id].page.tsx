@@ -3,10 +3,10 @@ import { useApp } from 'src/tools/app'
 import { replaceLanguageInUrl, useLanguage, useText } from 'src/tools/language'
 import { useCountry } from 'src/tools/country'
 import { useApi, useApiCached } from '../../../tools/useApiCall'
-import { CongressMemberResponse, ReportCardBill, ReportCardMember, ReportCardResponse } from '../../../api/report-card.models'
 import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
 import cn from 'clsx'
+import { Root as CongressMemberResponse } from '../../../api/congress-member.models'
 
 const schemaCropString = '://';
 const cropSchemaPart = (url: string) => url.indexOf(schemaCropString) >= 0 ? url.substring(url.indexOf(schemaCropString) + schemaCropString.length) : url;
