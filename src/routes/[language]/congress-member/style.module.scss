@@ -10,6 +10,8 @@
 
 	.header {
 		margin-bottom: 12px;
+		//position: sticky;
+		//top: 100px;
 
 		> a {
 			margin-bottom: 24px;
@@ -30,19 +32,14 @@
 		//text-align: center;
 	}
 
-	@include max-w(desktop) {
-		padding-left: 10px;
-		padding-right: 10px;
-		//max-width: 100%;
-	}
-
 	h1 {
 		font-size: 30px;
 		text-transform: uppercase;
 		margin: 12px 0;
 	}
 
-	h2 {
+	h2, h3 {
+		width: auto;
 		font-size: 16px;
 		text-transform: uppercase;
 		color: #B7B7B7;
@@ -51,13 +48,38 @@
 	.member-content {
 		display: flex;
 		gap: 24px;
+		align-items: start;
 
 		.content {
 			flex: 6;
+
+			.member-votes {
+				display: grid;
+				grid-template-columns: auto 1fr auto;
+				grid-row-gap: 24px;
+				grid-column-gap: 12px;
+
+				.bill-number {
+					font-weight: bold;
+				}
+				/*.member-vote {
+					display: flex;
+					padding-bottom: 12px;
+					gap: 6px;
+					flex-direction: column;
+
+					.bill-title {
+						font-size: 16px;
+						font-weight: bold;
+					}
+				}*/
+			}
 		}
 
 		.contact {
+			position: sticky;
 			flex: 4;
+			top: 100px;
 		}
 
 		> section {
@@ -72,7 +94,10 @@
 			h2 {
 				color: #555;
 				font-size: 18px;
-				margin-bottom: 24px;
+				margin-bottom: 32px;
+				padding-bottom: 2px;
+				width: fit-content;
+				border-bottom: solid 2px #5E9AEDAA;
 			}
 
 			strong {
@@ -103,5 +128,17 @@
 				margin: 12px 0;
 			}
 		}
+	}
+
+	@include max-w(mobile) {
+		.contact {
+			position: static;
+		}
+	}
+
+	@include max-w(desktop) {
+		padding-left: 10px;
+		padding-right: 10px;
+		//max-width: 100%;
 	}
 }

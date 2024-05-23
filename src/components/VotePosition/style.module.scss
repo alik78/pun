@@ -1,0 +1,10 @@
+@import './src/style/variables';
+@import './src/style/mixins';
+
+.vote-value {
+	.vote-value-icon {
+		margin: 0 0.2em;
+		font-size: 1.1em;
+		font-weight: bold;
+	}
+}
