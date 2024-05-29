@@ -1,4 +1,5 @@
 // https://transform.tools/json-to-typescript
+// http://api.staging.protectukrainenow.org/v1/congress/ua_report_card
 
 export interface Root {
 	request: Request

@@ -6,42 +6,76 @@ import { useApi, useApiCached } from '../../../tools/useApiCall'
 import DataLoader from '../../../components/DataLoader'
 import Container from '../../../components/Container'
 import cn from 'clsx'
-import { Root as CongressMemberResponse } from '../../../api/congress-member.models'
-import React from 'react'
+import { Root as CongressMemberResponse, Member as Member } from '../../../api/congress-member.models'
+import React, { useEffect, useState } from 'react'
 import VotePosition from '../../../components/VotePosition'
+import memberPhotoPlaceholder from 'src/assets/member-photo-placeholder.webp'
 
 const schemaCropString = '://';
 const cropSchemaPart = (url: string) => url.indexOf(schemaCropString) >= 0 ? url.substring(url.indexOf(schemaCropString) + schemaCropString.length) : url;
 
 export const congressMemberDetailsUrl = (memberID: string, language: string) => `/${language}/congress-member/${memberID}`;
+export const congressMemberPartyCssClass = (member: Member) => {
+	switch (member.party) {
+		case 'Republican Party':
+		case 'R':
+			return style['party-republican'];
+		case 'Democratic Party':
+		case 'D':
+			return style['party-democratic'];
+		default:
+			return '';
+	}
+};
 
 export default function CongressMember({ params }) {
 	const language = useLanguage()
 	const text = useText()
 	const country = useCountry()
 	const app = useApp()
-
 	const apiCall = useApiCached<CongressMemberResponse>(`/members/${params.id}`, 3);
+	const [scrolled, setScrolled] = useState(false);
+	useEffect(() => {
+		const handleScroll = () => {
+			const offset = window.scrollY;
+			if (offset > 320) {
+				setScrolled(true);
+			} else if (offset < 100) {
+				setScrolled(false);
+			}
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	const member = apiCall?.data?.member;
 	const memberVotes = (apiCall?.data?.member_votes || []);
 
-	return (
+	return (<div className={cn(style.page, scrolled ? style['scrolled'] : '')}>
 		<DataLoader isLoading={apiCall.isLoading}>
 			{member && <>
-				<Container className={style.container}>
-					<div className={style['header']} >
-						<h3>{member.title}</h3>
-						<h1>{member.first_name} {member.last_name}</h1>
+				<div className={cn(style['header'], congressMemberPartyCssClass(member))} >
+					<Container className={cn(style.container)}>
+						<img src={memberPhotoPlaceholder} />
+						<div className={style['member-info']}>
+							<h1 className={style['member-name']}>{member.first_name} {member.last_name}</h1>
+							<h2 className={style['member-title']}>{member.title}</h2>
+							<h3 className={style['member-party']}>
+								{member.party == 'D' && <>Democratic Party</>}
+								{member.party == 'R' && <>Republican Party</>}
+							</h3>
+						</div>
+					</Container>
+				</div>
 
-						{member.party == 'D' && <p>Democratic Party</p>}
-						{member.party == 'R' && <p>Republican Party</p>}
-					</div>
-
+				<Container className={cn(style.container, style['container-content'])}>
 					<div className={style['member-content']}>
 						<section className={style['content']}>
 							<h2>Member Votes</h2>
 							<div className={style['member-votes']}>
-								{memberVotes.map(vote => <React.Fragment key={vote.bill_number}>
+								{memberVotes.map((vote, index) => <React.Fragment key={index}>
 									<span className={style['bill-number']}>{vote.bill_number}</span>
 									<span className={style['bill-title']}>{vote.bill_short_title}</span>
 									<VotePosition value={vote.vote_position} />
@@ -77,5 +111,5 @@ export default function CongressMember({ params }) {
 				</Container>
 			</>}
 		</DataLoader >
-	);
+	</div>);
 }
