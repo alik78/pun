@@ -58,7 +58,7 @@ export default function CongressMember({ params }) {
 			{member && <>
 				<div className={cn(style['header'], congressMemberPartyCssClass(member))} >
 					<Container className={cn(style.container)}>
-						<img src={member.photo_url ?? memberPhotoPlaceholder} />
+						<div className={style['img']} style={{ backgroundImage: `url(${member.photo_url ?? memberPhotoPlaceholder})`}} ></div>
 						<div className={style['member-info']}>
 							<h1 className={style['member-name']}>{member.first_name} {member.last_name}</h1>
 							<h2 className={style['member-title']}>{member.title}</h2>

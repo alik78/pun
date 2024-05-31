@@ -15,9 +15,6 @@ function partyShortName(member: ReportCardMember) {
 	//return member.party == 'D' ? 'Dem' : 'Rep';
 }
 
-type MemberBillVotePosition = 'yes' | 'no' | 'nio' | 'na';
-type MemberBillVoteFavor = 'yes' | 'no' | 'neutral';
-
 type TableDataColumn = {
 	id: string;
 	title: string;

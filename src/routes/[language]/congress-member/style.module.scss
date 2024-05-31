@@ -8,9 +8,9 @@
 		.container {
 			padding-top: 12px;
 
-			img {
-				aspect-ratio: 4/5;
-				height: var(--member-card--header-image-height-small);
+			.img {
+				width: 60px;
+				height: 75px;
 			}
 		}
 
@@ -38,9 +38,9 @@
 
 .page {
 	--member-card--header-height-default: 240px;
-	--member-card--header-image-height-default: 180px;
+	//--member-card--header-image-height-default: 180px;
 	--member-card--header-height-small: 100px;
-	--member-card--header-image-height-small: 75px;
+	//--member-card--header-image-height-small: 75px;
 
 	.header {
 		//background-color: $color-party-neutral;
@@ -78,8 +78,7 @@
 				opacity: 0.8;
 			}
 		}
-
-	/*	&.party-republican {
+		/*	&.party-republican {
 			background-color: $color-party-republican;
 		}
 
@@ -102,10 +101,21 @@
 
 			img {
 				transition: height 0.1s ease-in;
-				height: var(--member-card--header-image-height-default);
+				//height: var(--member-card--header-image-height-default);
 			}
 
-			> div {
+			.img {
+				transition: height 0.1s ease-in;
+				//transition: width 0.1s ease-in;
+				background-color: #888;
+				background-size: cover;
+				background-position: center;
+				//background-color: red;
+				width: 144px;
+				height: 180px;
+			}
+
+			> div:last-of-type {
 				flex: 1;
 			}
 		}
