@@ -43,8 +43,9 @@
 	--member-card--header-image-height-small: 75px;
 
 	.header {
-		background-color: $color-party-neutral;
-		color: white;
+		//background-color: $color-party-neutral;
+		background-color: #ddd;
+		color: black;
 		margin-bottom: 12px;
 		position: sticky;
 		top: var(--header-height);
@@ -54,7 +55,7 @@
 		z-index: 1;
 
 		h1, h2, h3 {
-			color: white;
+			//color: white;
 			text-transform: uppercase;
 		}
 
@@ -78,13 +79,13 @@
 			}
 		}
 
-		&.party-republican {
+	/*	&.party-republican {
 			background-color: $color-party-republican;
 		}
 
 		&.party-democratic {
 			background-color: $color-party-democratic;
-		}
+		}*/
 
 
 		> a {

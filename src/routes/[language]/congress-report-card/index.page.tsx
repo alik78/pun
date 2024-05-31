@@ -11,7 +11,8 @@ import { congressMemberDetailsUrl } from '../congress-member/[id].page'
 import React from 'react'
 
 function partyShortName(member: ReportCardMember) {
-	return member.party == 'D' ? 'Dem' : 'Rep';
+	return member.party;
+	//return member.party == 'D' ? 'Dem' : 'Rep';
 }
 
 type MemberBillVotePosition = 'yes' | 'no' | 'nio' | 'na';
