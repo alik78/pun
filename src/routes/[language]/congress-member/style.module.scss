@@ -9,6 +9,7 @@
 			padding-top: 12px;
 
 			img {
+				aspect-ratio: 4/5;
 				height: var(--member-card--header-image-height-small);
 			}
 		}
@@ -39,7 +40,7 @@
 	--member-card--header-height-default: 240px;
 	--member-card--header-image-height-default: 180px;
 	--member-card--header-height-small: 100px;
-	--member-card--header-image-height-small: 80px;
+	--member-card--header-image-height-small: 75px;
 
 	.header {
 		background-color: $color-party-neutral;

@@ -1,4 +1,5 @@
 // https://transform.tools/json-to-typescript
+// http://api.staging.protectukrainenow.org/v1/members/A000055
 
 export interface Root {
 	status: string
@@ -61,6 +62,7 @@ export interface Member {
 	votes_against_party_pct: number
 	created_at: string
 	updated_at: string
+	photo_url: string
 }
 
 export interface MemberVote {

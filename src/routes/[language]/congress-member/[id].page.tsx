@@ -38,9 +38,9 @@ export default function CongressMember({ params }) {
 	useEffect(() => {
 		const handleScroll = () => {
 			const offset = window.scrollY;
-			if (offset > 320) {
+			if (offset > 150) {
 				setScrolled(true);
-			} else if (offset < 100) {
+			} else if (offset < 20) {
 				setScrolled(false);
 			}
 		};
@@ -58,7 +58,7 @@ export default function CongressMember({ params }) {
 			{member && <>
 				<div className={cn(style['header'], congressMemberPartyCssClass(member))} >
 					<Container className={cn(style.container)}>
-						<img src={memberPhotoPlaceholder} />
+						<img src={member.photo_url ?? memberPhotoPlaceholder} />
 						<div className={style['member-info']}>
 							<h1 className={style['member-name']}>{member.first_name} {member.last_name}</h1>
 							<h2 className={style['member-title']}>{member.title}</h2>

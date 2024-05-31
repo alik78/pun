@@ -10,48 +10,12 @@ import cn from 'clsx'
 import { congressMemberDetailsUrl } from '../congress-member/[id].page'
 import React from 'react'
 
+function partyShortName(member: ReportCardMember) {
+	return member.party == 'D' ? 'Dem' : 'Rep';
+}
+
 type MemberBillVotePosition = 'yes' | 'no' | 'nio' | 'na';
 type MemberBillVoteFavor = 'yes' | 'no' | 'neutral';
-
-//type MemberBillVote = {
-//	id: string;
-//	position: MemberBillVotePosition;
-//	favor: MemberBillVoteFavor;
-//};
-
-//function buildMemberBillVote(bill: ReportCardBill, member: ReportCardMember): MemberBillVote {
-//	const uid = `${member.member_id}${bill.bill_number}`;
-//	const vote = member.bills.find(b => b.bill_number == bill.bill_number);
-//	if (!vote) {
-//		return { id: uid, position: 'na', favor: 'neutral' };
-//	}
-
-//	let positionValue: MemberBillVotePosition = 'na';
-//	switch (vote.vote_position) {
-//		case 'Yes':
-//			positionValue = 'yes';
-//			break;
-//		case 'No':
-//			positionValue = 'no';
-//			break;
-//		case 'Not In Office':
-//			positionValue = 'nio';
-//			break;
-//	}
-
-//	let favorValue: MemberBillVoteFavor = 'neutral';
-//	if (bill.in_favor === true) {
-//		favorValue = 'yes';
-//	} else if (bill.in_favor === false) {
-//		favorValue = 'no';
-//	}
-
-//	return {
-//		id: uid,
-//		position: positionValue,
-//		favor: favorValue
-//	};
-//}
 
 type TableDataColumn = {
 	id: string;
@@ -103,7 +67,7 @@ function buildTableData(language: string, apiResponse: ReportCardResponse, text:
 					className: [],
 					hideMobile: true,
 					element: <>
-						<a href={congressMemberDetailsUrl(member.member_id, language)}>{member.member_short_title} {member.member_name}</a>
+						<a href={congressMemberDetailsUrl(member.member_id, language)}>{member.member_short_title} {member.member_name}</a> ({partyShortName(member)})
 					</>
 				},
 				{
@@ -184,7 +148,7 @@ export default function CongressReportCard() {
 				{/* mobile */}
 				{tableData.rows.map(row => <a className={style['mobile-link']} key={row.id} href={congressMemberDetailsUrl(row.data.member_id, language)} >
 					<section>
-						<h5>{row.data.member_short_title} {row.data.member_name}</h5>
+						<h5>{row.data.member_short_title} {row.data.member_name} ({partyShortName(row.data)})</h5>
 
 						{tableData.columns.map((column, index) => <React.Fragment key={column.title}>
 							{!column.hideMobile && <div>

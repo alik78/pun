@@ -26,6 +26,7 @@ export interface Member {
 	member_name: string
 	state: string
 	district?: string
+	party: string
 	bills: Bill2[]
 }
 
